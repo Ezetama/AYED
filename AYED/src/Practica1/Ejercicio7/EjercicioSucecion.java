@@ -50,6 +50,36 @@ public class EjercicioSucecion {
 		}
 		return suma;
 	}
+	public static void agregarMasChico (List<Integer> l1, List<Integer> l2,List<Integer> l3,int i, int j) {
+		if ((i<l1.size())&&(j<l2.size())){
+			if (l1.get(i)<l2.get(j)) {
+				l3.add(l1.get(i));
+				agregarMasChico(l1,l2,l3,i+1,j);
+			}
+			else {
+				l3.add(l2.get(j));
+				agregarMasChico(l1,l2,l3,i,j+1);
+			}
+		}
+		else {
+			if (i<l1.size()) {
+				l3.add(l1.get(i));
+				agregarMasChico(l1,l2,l3,i+1,j);
+			}
+			else {
+				if (j<l2.size()) {
+					l3.add(l2.get(j));
+					agregarMasChico(l1,l2,l3,i,j+1);
+				}
+			}
+		}
+	}
+	public static ArrayList<Integer> combinarListas (List<Integer> l1, List<Integer> l2){
+		ArrayList <Integer> l3= new ArrayList<Integer>();
+		int i=0,j=0;
+		agregarMasChico (l1,l2,l3,i,j);
+		return l3;
+	}
 }
 
 

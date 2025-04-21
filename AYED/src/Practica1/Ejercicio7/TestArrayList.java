@@ -99,6 +99,14 @@ public class TestArrayList {
 		System.out.println(l2);
 		int suma= EjercicioSucecion.sumarLinked((LinkedList)l);
 		System.out.println("La suma es: "+suma);
+		ArrayList<Integer> l4= new ArrayList<Integer>();
+		l4.add(5);
+		l4.add(7);
+		l4.add(15);
+		l4.add(120);
+		List<Integer> l3= EjercicioSucecion.combinarListas(l, l4);
+		System.out.println(l3);
+		
 	}
 	
 	
